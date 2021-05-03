@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-import { render } from "react-dom";
+import { getUsers } from "./common/usersAPI";
+import "./style.scss";
+console.log("Hello webpack!");
 
-function App() {
-    const [customState, setState] = useState("CLICK ME");
-
-    return <button onClick={() => setState("CLICKED")}>{customState}</button>;
-}
-
-render(<App />, document.getElementById("root"));
+getUsers().then(json => console.log('result=>',json));
