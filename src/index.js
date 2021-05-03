@@ -1,11 +1,10 @@
-import "./style.css";
-import "./style.scss";
+import React, { useState } from "react";
+import { render } from "react-dom";
 
-import txt from './index.txt';
+function App() {
+    const [customState, setState] = useState("CLICK ME");
 
-console.log(txt)
-const fancyFunc = () => {
-    return [1, 2];
-};
+    return <button onClick={() => setState("CLICKED")}>{customState}</button>;
+}
 
-const [a, b] = fancyFunc();
+render(<App />, document.getElementById("root"));
